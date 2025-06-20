@@ -107,7 +107,13 @@
                 const photoData = await photoRes.json();
                 return {
                   ...dog,
-                  photo: photoData.message
+                  photo: photoData.status === 'success' ? photoData.message : null
+                };
+              } catch (err) {
+                console.error("Could not fetch dog photo:", err);
+                return {
+                  ...dog,
+                  photo: null
                 };
               }
             }
