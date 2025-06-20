@@ -32,7 +32,7 @@ let db;
       user: 'root',
       password: ''
     });
-    await connection.query
+    await connection.query('CREATE DATABASE IF NOT EXISTS Do')
   }
 })();
 // catch 404 and forward to error handler
