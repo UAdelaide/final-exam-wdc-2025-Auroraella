@@ -93,6 +93,9 @@
             if (!res.ok) throw new Error('Failed to fetch dogs');
             let dogsData = await res.json();
 
+            const imagePromises = dogsData.map(dog =>
+              fetch('https://dog.ceo/api/breeds/image/random').then(res => res.json())
+            );
           }
         }
       }
