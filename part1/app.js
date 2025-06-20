@@ -134,7 +134,12 @@ app.get('/api/walkrequests/open', async (req, res) => {
 app.get('/api/walkers/summary', async (req, res) => {
   try {
     const [rows] = await db.execute(`
-
+      SELECT u.username AS walker_username,
+        COUNT(r.rating_id) AS total_ratings,
+        AVG(r.rating) AS average_rating,
+        SUM(CASE WHEN wr.status = 'completed' THEN 1 ELSE 0 END) AS completed_walks
+      FROM Users u
+      
     `);
 
   }
