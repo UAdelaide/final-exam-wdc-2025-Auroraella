@@ -108,7 +108,10 @@
             console.error("Could not fetch dogs:", err);
           }
         },
-        
+
+        mounted() {
+          this.fetchDogs();
+        }
       }
     }).mount('#app');
   </script>
