@@ -56,6 +56,8 @@ let db;
         (${alice.user_id}, 'Max', 'medium'),
         (${carol.user_id}, 'Bella', 'small'),
         (${alice.user_id}, 'Milu', 'large'),
+        (${carol.user_id}, 'Candy', 'small'),
+        (${carol.user_id}, 'Bella', 'small'),
       `);
     }
   }
