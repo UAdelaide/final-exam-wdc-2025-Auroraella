@@ -35,7 +35,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="dog in dogs" :key="dog.id">
+          <tr v-for="dog in dogs" :key="dog.dog_name">
+            <td style="width:120px"><img :src="dog.photo" :alt="dog.dog_name" style="width:100px;height:100px;object-fit:cover;border-radius:10px;"></td>
             <td>{{ dog.name }}</td>
             <td>{{ dog.size }}</td>
             <td>{{ dog.owner_username }}</td>
