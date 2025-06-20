@@ -145,7 +145,10 @@ app.get('/api/walkers/summary', async (req, res) => {
       GROUP BY u.user_id
     `);
     res.json(rows);
-  } catch (err)
+  } catch (err) {
+    res.status(500).json()
+  }
+
 });
 
 
