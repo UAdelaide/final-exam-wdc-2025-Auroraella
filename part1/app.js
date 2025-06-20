@@ -97,4 +97,6 @@ let db;
     res.render('error');
   });
 
+  // Q6 to 8
+  
   module.exports = app;
