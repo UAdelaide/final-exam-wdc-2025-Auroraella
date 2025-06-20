@@ -11,7 +11,7 @@ app.use(session({
     secret: process.env.SESSION_SECRET || 'dogwalksecret',
     resave: false,
     saveUninitialized: false,
-    cookie
+    cookie: { secure: false }
 }));
 
 // Routes
