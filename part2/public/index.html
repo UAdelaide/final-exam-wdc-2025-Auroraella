@@ -14,15 +14,16 @@
     <form @submit.prevent="login" class="mb-3 p-4 rounded bg-white shadow" style="max-width: 500px;">
       <div >v-if="error" class="alert alert-danger">{{ error }}</div>
       <div class="mb-3">
-        <label for="email" class="form-label">Email address</label>
+        <label for="email" class="form-label">Email</label>
         <input type="email" v-model="email" id="email" class="form-control" required autocomplete="username">
       </div>
       <div class="mb-3">
         <label for="password" class="form-label">Password</label>
         <input type="password" v-model="password" id="password" class="form-control" required autocomplete="current-password">
       </div>
-      <button type="submit" class="btn btn-primary w-100">Log in</button
+      <button type="submit" class="btn btn-primary w-100">Log In</button
     </form>
+    
     <p class="lead">Connect with trusted walkers for your beloved dog!</p>
 
     <a href="owner-dashboard.html" class="btn btn-outline-primary me-2">Owner Dashboard</a>
