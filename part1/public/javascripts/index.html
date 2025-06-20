@@ -66,14 +66,13 @@
                     dogFact: 'This dog has a cute face',
                     showDog: false,
                     showDetails: false
-
             };
             },
             methods: {
                 async fetchDog() {
                     try {
-                    const res = await fetch('https://dog.ceo/api/breeds/image/random');
-                    const data = await res.json();
+                        const res = await fetch('https://dog.ceo/api/breeds/image/random');
+                        const data = await res.json();
                     this.dogImg = data.message;
                 } catch (e) {
                     this.dogImg = '';
