@@ -104,7 +104,9 @@
             if (!user.user_id) throw new Error('Not logged in');
             const res = await fetch(`/api/users/${user.user_id}/dogs`);
             dogs.value = await res.json();
-          } 
+          } catch (err) {
+            error.value = 'Failed to load dogs';
+          }
          }
 
         async function submitWalkRequest() {
