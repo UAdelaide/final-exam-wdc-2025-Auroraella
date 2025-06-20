@@ -45,6 +45,8 @@ let db;
         ('mimi', 'mimi@example.com', 'hashed199', 'owner')
       `);
     }
+
+    const [dogRows] = await db
   }
 })();
 // catch 404 and forward to error handler
