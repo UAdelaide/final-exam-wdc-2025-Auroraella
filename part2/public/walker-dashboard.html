@@ -76,7 +76,8 @@
         }
 
         const logout = async () => {
-          
+          await fetch('/api/users/logout', { method: 'POST' });
+          window.location.href = 'index.html';
         }
 
         onMounted(() => {
@@ -87,7 +88,8 @@
           walks,
           message,
           error,
-          applyToWalk
+          applyToWalk,
+          logout
         };
       }
     }).mount('#app');
