@@ -110,14 +110,12 @@
                   photo: photoData.status === 'success' ? photoData.message : null
                 };
               } catch (err) {
-                console.error("Could not fetch dog photo:", err);
-                return {
-                  ...dog,
-                  photo: null
-                };
+                console.error('Failed to fetch dog photo:', err);
+                return { ...dog, photo: null };
               }
             }
-
+            ));
+            this.dogs = dogsWithPhotos;
           } catch (err) {
             console.error("Could not fetch dogs:", err);
           }
