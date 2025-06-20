@@ -57,7 +57,7 @@ let db;
         (${carol.user_id}, 'Bella', 'small'),
         (${alice.user_id}, 'Milu', 'large'),
         (${carol.user_id}, 'Candy', 'small'),
-        (${carol.user_id}, 'Bella', 'small'),
+        (${mimi.user_id}, 'Apple', 'small'),
       `);
     }
   }
