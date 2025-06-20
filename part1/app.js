@@ -133,7 +133,9 @@ app.get('/api/walkrequests/open', async (req, res) => {
 // API Walkers
 app.get('/api/walkers/summary', async (req, res) => {
   try {
-    
+    const [rows] = await db.execute(`
+      `);
+
   }
 });
 
