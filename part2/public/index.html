@@ -26,11 +26,7 @@
 
     <h2 class="mt-5 mb-3">All Dogs in the Database</h2>
     <div v-if="dogs.length > 0">
-      <ul class="list-group">
-        <li class="list-group-item" v-for="dog in dogs" :key="dog.id">
-          {{ dog.name }} ({{ dog.size }}) - Owner: {{ dog.owner_username }}
-        </li>
-      </ul>
+    
     </div>
 
     <p class="lead">Connect with trusted walkers for your beloved dog!</p>
