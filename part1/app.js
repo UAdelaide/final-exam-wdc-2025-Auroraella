@@ -100,6 +100,8 @@ let db;
   // Q6 to 8
   // API Dogs
   app.get('/api/dogs', async (req, res) => {
-    try 
+    try {
+      const [rows] await db.execute(``)
+    }
   });
   module.exports = app;
