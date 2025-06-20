@@ -55,6 +55,7 @@ let db;
       await db.execute(`INSERT INTO Dogs (owner_id, name, size) VALUES
         (${alice.user_id}, 'Max', 'medium'),
         (${carol.user_id}, 'Bella', 'small'),
+        (${alice.user_id}, 'Milu', 'large'),
       `);
     }
   }
