@@ -62,6 +62,7 @@ let db;
     }
 
     const [walkRows] = await db.execute('SELECT COUNT(*) AS count FROM WalkRequests');
+    
   }
 })();
 // catch 404 and forward to error handler
