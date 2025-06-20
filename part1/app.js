@@ -39,8 +39,8 @@ let db;
       host: 'localhost',
       user: 'root',
       password: '',
-      database: 
-    })
+      database: 'DogWalkService'
+    });
   }
 })();
 // catch 404 and forward to error handler
