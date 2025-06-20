@@ -40,7 +40,7 @@ let db;
       await db.execute('INSERT INTO Users (username, email, password_hash, role) VALUES
         ('alice', 'alice@example.com', 'hased123', 'owner'),
         ('bobwalker', 'bob@example.com', 'hased456', 'walker'),
-        ('carol')
+        ('carol', 'carol@example.com', )
         ');
     }
   }
