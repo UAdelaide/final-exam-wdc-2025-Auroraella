@@ -117,6 +117,7 @@
           }
         }
 
+        // Q14: Modify changes for owner dashboard
         const logout = async () => {
           await fetch('/api/users/logout', { method: 'POST' });
           window.location.href = 'index.html';
@@ -131,7 +132,7 @@
           walks,
           message,
           error,
-          submitWalkRequest,
+          submitWalkRequest, // Q14: Modify changes for owner dashboard
           logout
         };
       }
