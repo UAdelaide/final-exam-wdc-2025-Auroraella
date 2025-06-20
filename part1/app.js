@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+const { mkdtempSync } = require('fs');
 
 var app = express();
 
@@ -26,7 +27,7 @@ let db;
 
 (async () => {
   try {
-    
+    const connection = await mys
   }
 })();
 // catch 404 and forward to error handler
