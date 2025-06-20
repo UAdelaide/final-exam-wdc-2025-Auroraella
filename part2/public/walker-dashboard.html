@@ -101,7 +101,8 @@
         }
 
         // Q16
-        onMounted((asyn) => {
+        onMounted( async () => {
+          await getCurrentUser();
           loadWalkRequests();
         });
 
