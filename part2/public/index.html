@@ -14,9 +14,8 @@
     <p class="lead">Connect with trusted walkers for your beloved dog!</p>
 
     <form @submit.prevent="login" class="mb-4" style="max-width:400px">
-      <div v-if="error" class="alert alert-danger">{{ error }}</div>
       <div class="mb-3">
-        <label for="email" class="form-label">Email</label>
+        <label for="username" class="form-label">User</label>
         <input type="email" v-model="email" id="email" class="form-control" required autocomplete="username">
       </div>
       <div class="mb-3">
