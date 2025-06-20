@@ -35,6 +35,7 @@ let db;
     });
 
     // Q%; SQL insert into
+    const [userRows] = await
   }
 })();
 // catch 404 and forward to error handler
