@@ -32,7 +32,7 @@ let db;
       user: 'root',
       password: ''
     });
-    await connection.query('CREATE DATABASE IF NOT EXISTS Do')
+    await connection.query('CREATE DATABASE IF NOT EXISTS DogWalkService');
   }
 })();
 // catch 404 and forward to error handler
