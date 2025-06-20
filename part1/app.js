@@ -65,7 +65,8 @@ let db;
     const max = dogs.find(d => d.name === 'Max');
     const bella = dogs.find(d => d.name === 'Bella');
     const milu = dogs.find(d => d.name === 'Milu');
-    const candy = dogs.find(d => d.name === 'Max');
+    const candy = dogs.find(d => d.name === 'Candy');
+    const max = dogs.find(d => d.name === 'Max');
   }
 })();
 // catch 404 and forward to error handler
