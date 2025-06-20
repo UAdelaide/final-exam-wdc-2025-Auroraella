@@ -33,6 +33,8 @@ let db;
       password: '',
       database: 'DogWalkService'
     });
+
+    // Part 1: 
   }
 })();
 // catch 404 and forward to error handler
