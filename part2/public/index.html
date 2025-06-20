@@ -105,6 +105,10 @@
               try {
                 const photoRes = await fetch('https://dog.ceo/api/breeds/image/random');
                 const photoData = await photoRes.json();
+                return {
+                  ...dog,
+                  photo: photoData.message
+                };
               }
             }
 
