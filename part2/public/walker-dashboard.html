@@ -57,8 +57,10 @@
               return;
             }
             if (!res.ok) {
-              
+              throw new Error('Failed to get user information');
             }
+            const userData = await res.json();
+            user.value = userData.id;
           }}
         }
         async function loadWalkRequests() {
