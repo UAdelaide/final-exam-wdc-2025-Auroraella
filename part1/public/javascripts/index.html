@@ -41,7 +41,8 @@
         </div>
         <div class="button-group">
             <button type="button" @click="showDog = true">Show Dog</button>
-            <button type="button" @click="showDog = false"> Dog</button>
+            <button type="button" @click="showDog = false">Hide Dog</button>
+            <button type @click="fetchDog" :disabled="!showDog">Refresh Dog</button>
 
 
         </div>
