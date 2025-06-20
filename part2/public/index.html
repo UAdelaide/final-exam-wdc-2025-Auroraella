@@ -13,7 +13,10 @@
     <h1 class="mb-4 text-primary">{{ message }}</h1>
     <form @submit.prevent="login" class="mb-3 p-4 rounded bg-white shadow" style="max-width: 500px;">
       <div >v-if="error" class="alert alert-danger">{{ error }}</div>
-      
+      <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="email" v-model="email" required>
+      </div>
     </form>
     <p class="lead">Connect with trusted walkers for your beloved dog!</p>
 
