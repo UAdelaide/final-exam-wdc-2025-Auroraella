@@ -42,7 +42,11 @@
       methods: {
         async login() {
           this.error = '';
-          try
+          try {
+             const res = await fetch('/api/users/login', {
+              
+             }
+          }
         }
       }
     }).mount('#app');
