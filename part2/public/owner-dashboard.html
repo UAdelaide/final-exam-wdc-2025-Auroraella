@@ -100,7 +100,9 @@
          async function loadDogs() {
           try {
             const userRes = await fetch('/api/users/me');
-            const user = await userRes.json()
+            const user = await userRes.json();
+            if (!user.user_id) throw new Error('Not logged in');
+            
           }
          }
 
