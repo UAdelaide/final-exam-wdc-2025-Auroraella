@@ -80,30 +80,32 @@ let db;
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
   }
-}) ();
-  // catch 404 and forward to error handler
-  app.use(function (req, res, next) {
-    next(createError(404));
-  });
+})();
+// catch 404 and forward to error handler
+app.use(function (req, res, next) {
+  next(createError(404));
+});
 
-  // error handler
-  app.use(function (err, req, res, next) {
-    // set locals, only providing error in development
-    res.locals.message = err.message;
-    res.locals.error = req.app.get('env') === 'development' ? err : {};
+// error handler
+app.use(function (err, req, res, next) {
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+  res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-    // render the error page
-    res.status(err.status || 500);
-    res.render('error');
-  });
+  // render the error page
+  res.status(err.status || 500);
+  res.render('error');
+});
 
-  // Q6 to 8
-  // API Dogs
-  app.get('/api/dogs', async (req, res) => {
-    try {
-      const [rows] await db.execute(`
-        
+// Q6 to 8
+// API Dogs
+app.get('/api/dogs', async (req, res) => {
+  try {
+    const [rows] await db.execute(`
+        SELECT d.name AS dog_name, d.size, u.username AS owner_username
+        FROM Dogs d
+        JOIN Users u ON d.owner_id = u.user_id
         `);
-    }
+  }
   });
-  module.exports = app;
+module.exports = app;
