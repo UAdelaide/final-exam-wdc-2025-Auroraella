@@ -51,7 +51,7 @@ let db;
       const [owners] = await db.execute("SELECT user_id, username FROM Users WHERE role='owner'");
       const alice = owners.find((u) => u.username === 'alice123');
       const carol = owners.find((u) => u.username === 'carol123');
-      const mimi = owners.find(u => u.username === 'mimi');
+      const mimi = owners.find((u) => u.username === 'mimi');
       await db.execute(`INSERT INTO Dogs (owner_id, name, size) VALUES
         (${alice.user_id}, 'Max', 'medium'),
         (${carol.user_id}, 'Bella', 'small'),
@@ -63,8 +63,8 @@ let db;
 
     const [walkRows] = await db.execute('SELECT COUNT(*) AS count FROM WalkRequests');
     if (walkRows[0].count === 0) {
-      const max = dogs.find(d => d.name === 'Max');
-      const bella = dogs.find(d => d.name === 'Bella');
+      const max = dogs.find((d) => d.name === 'Max');
+      const bella = dogs.find((d) => d.name === 'Bella');
       const milu = dogs.find(d => d.name === 'Milu');
       const candy = dogs.find(d => d.name === 'Candy');
       const apple = dogs.find(d => d.name === 'Apple');
