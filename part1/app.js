@@ -71,7 +71,8 @@ let db;
       (${max.dog_id}, '2025-06-10 08:00:00', 30, 'Parklands', 'open'),
       (${bella.dog_id}, '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted'),
       (${milu.dog_id}, '2025-06-11 09:45:00', 60, 'Prospect', 'open'),
-      (${candy.dog_id}, '2025-06-12 11:30:00', 30, 'Harbour Town', 'accepted'),
+      (${candy.dog_id}, '2025-06-12 11:30:00', 30, 'Harbour Town', 'completed'),
+      (${bella.dog_id}, '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted'),
     `);
   }
 })();
