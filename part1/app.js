@@ -67,7 +67,7 @@ let db;
     const milu = dogs.find(d => d.name === 'Milu');
     const candy = dogs.find(d => d.name === 'Candy');
     const apple = dogs.find(d => d.name === 'Apple');
-    
+    await db.execute(`INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) VALUES
   }
 })();
 // catch 404 and forward to error handler
