@@ -62,12 +62,6 @@ let db;
 
     const [walkRows] = await db.execute('SELECT COUNT(*) AS count FROM WalkRequests');
     if (walkRows[0].count === 0) {
-      const [dogs] = await db.execute('SELECT dog_id, name, owner_id FROM Dogs');
-      const max = dogs.find((d) => d.name === 'Max');
-      const bella = dogs.find((d) => d.name === 'Bella');
-      const milu = dogs.find((d) => d.name === 'Milu');
-      const candy = dogs.find((d) => d.name === 'Candy');
-      const apple = dogs.find((d) => d.name === 'Apple');
       await db.execute(`INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) VALUES
         (${max.dog_id}, '2025-06-10 08:00:00', 30, 'Parklands', 'open'),
         (${bella.dog_id}, '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted'),
