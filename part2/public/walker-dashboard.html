@@ -61,7 +61,9 @@
             }
             const userData = await res.json();
             user.value = userData.id;
-          }}
+          } catch (err) {
+            error.value = err.message;
+        }
         }
         async function loadWalkRequests() {
           try {
