@@ -60,10 +60,10 @@ let db;
     if (walkRows[0].count === 0) {
       await db.execute(`INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) VALUES
         ((SELECT dog_id FROM Dogs WHERE name = 'Max' AND owner_id = (SELECT user_id FROM Users WHERE username = 'alice')), '2025-06-10 08:00:00', 30, 'Parklands', 'open'),
-        ((SELECT dog_id FROM Dogs WHERE name = 'Bella' AND owner_id = (SELECT user_id FROM Users WHERE username = 'carol123')), '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted'),
-        ((SELECT dog_id FROM Dogs WHERE name = 'Milu' AND owner_id = (SELECT user_id FROM Users WHERE username = 'alice123')), '2025-06-11 09:45:00', 60, 'Prospect', 'open'),
+        ((SELECT dog_id FROM Dogs WHERE name = 'Bella' AND owner_id = (SELECT user_id FROM Users WHERE username = 'carol')), '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted'),
+        ((SELECT dog_id FROM Dogs WHERE name = 'Milu' AND owner_id = (SELECT user_id FROM Users WHERE username = 'alice')), '2025-06-11 09:45:00', 60, 'Prospect', 'open'),
         ((SELECT dog_id FROM Dogs WHERE name = 'Candy' AND owner_id = (SELECT user_id FROM Users WHERE username = 'mimi')), '2025-06-12 11:30:00', 30, 'Harbour Town', 'completed'),
-        ((SELECT dog_id FROM Dogs WHERE name = 'Apple' AND owner_id = (SELECT user_id FROM Users WHERE username = 'carol123')), '2025-06-14 12:00:00', 40, 'Glenelg', 'open'),
+        ((SELECT dog_id FROM Dogs WHERE name = 'Apple' AND owner_id = (SELECT user_id FROM Users WHERE username = 'carol')), '2025-06-14 12:00:00', 40, 'Glenelg', 'open'),
       `);
     }
 
