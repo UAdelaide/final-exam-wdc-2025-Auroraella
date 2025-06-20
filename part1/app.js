@@ -62,7 +62,7 @@ let db;
     }
 
     const [walkRows] = await db.execute('SELECT COUNT(*) AS count FROM WalkRequests');
-    
+    const max = dogs.find(d => d.name === 'Max');
   }
 })();
 // catch 404 and forward to error handler
