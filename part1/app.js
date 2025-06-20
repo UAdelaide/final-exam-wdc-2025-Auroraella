@@ -60,6 +60,8 @@ let db;
         (${mimi.user_id}, 'Apple', 'small'),
       `);
     }
+
+    
   }
 })();
 // catch 404 and forward to error handler
