@@ -101,14 +101,7 @@
             if (!res.ok) throw new Error('Failed to fetch dogs');
             let dogsData = await res.json();
 
-
-
-            const images = await Promise.all(imagePromises);
-
-            this.dogs = dogsData.map((dog, index) => ({
-              ...dog,
-              photo: images[index].message
-            }));
+            
 
           } catch (err) {
             console.error("Could not fetch dogs:", err);
