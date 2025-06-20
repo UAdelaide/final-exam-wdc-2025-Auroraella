@@ -29,7 +29,8 @@ let db;
   try {
     const connection = await mysql.createConnection({
       host: 'localhost',
-      user: 
+      user: 'root',
+      password: ''
     });
   }
 })();
