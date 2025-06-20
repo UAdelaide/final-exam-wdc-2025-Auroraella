@@ -42,7 +42,7 @@ let db;
         ('bobwalker', 'bob@example.com', 'hased456', 'walker'),
         ('carol', 'carol@example.com', 'hased789', 'owner'),
         ('mina', 'mina@example.com', 'hashed000', 'walker'),
-        ('mimi', 'mimi@example.com'. )
+        ('mimi', 'mimi@example.com'. 'hashed', )
         ');
     }
   }
