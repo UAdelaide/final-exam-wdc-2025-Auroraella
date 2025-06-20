@@ -49,7 +49,7 @@ let db;
     const [dogRows] = await db.execute('SELECT COUNT(*) AS count FROM Dogs');
     if (dogRows[0].count) === 0) {
       const [owners] = await db.execute("SELECT user_id, username FROM Users WHERE role='owner'");
-      
+      const alice = owners.find(u =>)
     }
   }
 })();
