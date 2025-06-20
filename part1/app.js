@@ -53,7 +53,7 @@ let db;
       const carol = owners.find(u => u.username === 'carol123');
       const mimi = owners.find(u => u.username === 'mimi');
       await db.execute(`INSERT INTO Dogs (owner_id, name, size) VALUES
-        ()
+        (${alice.user_id})
     }
   }
 })();
