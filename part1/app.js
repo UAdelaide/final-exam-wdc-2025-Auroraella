@@ -33,6 +33,9 @@ let db;
       password: ''
     });
     await connection.query('CREATE DATABASE IF NOT EXISTS DogWalkService');
+    await connection.end();
+
+    db = a
   }
 })();
 // catch 404 and forward to error handler
