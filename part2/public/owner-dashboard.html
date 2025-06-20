@@ -102,8 +102,9 @@
             const userRes = await fetch('/api/users/me');
             const user = await userRes.json();
             if (!user.user_id) throw new Error('Not logged in');
-            
-          }
+            const res = await fetch(`/api/users/${user.user_id}/dogs`);
+            dogs.value = await res.json();
+          } 
          }
 
         async function submitWalkRequest() {
