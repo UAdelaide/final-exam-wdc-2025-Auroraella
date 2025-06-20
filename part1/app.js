@@ -52,7 +52,7 @@ let db;
         ((SELECT user_id FROM Users WHERE username = 'carol'), 'Bella', 'small'),
         ((SELECT user_id FROM Users WHERE username = 'alice'), 'Milu', 'large'),
         ((SELECT user_id FROM Users WHERE username = 'mimi'), 'Candy', 'medium'),
-        ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Apple', 'small')
+        ((SELECT user_id FROM Users WHERE username = 'carol'), 'Apple', 'small')
       `);
     }
 
