@@ -130,6 +130,9 @@ app.get('/api/walkrequests/open', async (req, res) => {
   }
 });
 
+// API Walkers
+
+
 
 
 module.exports = app;
