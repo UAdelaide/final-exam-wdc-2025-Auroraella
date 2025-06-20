@@ -27,7 +27,9 @@ let db;
 
 (async () => {
   try {
-    const connection = await mys
+    const connection = await mysql.createConnection({
+
+    });
   }
 })();
 // catch 404 and forward to error handler
