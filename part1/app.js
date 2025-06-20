@@ -63,7 +63,7 @@ let db;
         ((SELECT dog_id FROM Dogs WHERE name = 'Bella' AND owner_id = (SELECT user_id FROM Users WHERE username = 'carol')), '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted'),
         ((SELECT dog_id FROM Dogs WHERE name = 'Milu' AND owner_id = (SELECT user_id FROM Users WHERE username = 'alice')), '2025-06-11 09:45:00', 60, 'Prospect', 'open'),
         ((SELECT dog_id FROM Dogs WHERE name = 'Candy' AND owner_id = (SELECT user_id FROM Users WHERE username = 'mimi')), '2025-06-12 11:30:00', 30, 'Harbour Town', 'completed'),
-        ((SELECT dog_id FROM Dogs WHERE name = 'Apple' AND owner_id = (SELECT user_id FROM Users WHERE username = 'carol')), '2025-06-14 12:00:00', 40, 'Glenelg', 'open'),
+        ((SELECT dog_id FROM Dogs WHERE name = 'Apple' AND owner_id = (SELECT user_id FROM Users WHERE username = 'carol')), '2025-06-14 12:00:00', 40, 'Glenelg', 'open')
       `);
     }
 
