@@ -62,6 +62,7 @@ let db;
 
     const [walkRows] = await db.execute('SELECT COUNT(*) AS count FROM WalkRequests');
     if (walkRows[0].count === 0) {
+      const [dogs] = await db.execute('SELECT dog_id, name, owner_id FROM Dogs');
       const max = dogs.find((d) => d.name === 'Max');
       const bella = dogs.find((d) => d.name === 'Bella');
       const milu = dogs.find((d) => d.name === 'Milu');
