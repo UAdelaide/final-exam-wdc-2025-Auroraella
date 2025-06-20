@@ -48,7 +48,11 @@
         </div>
         <div v-if="showDog">
             <img class="dog-img" :src="dogImg" alt="Dog of the day" v-if="dogImg" />
-
+            <div v-if="showDetails">
+        <h2>{{ dogName }}</h2>
+        <p>Breed: {{ dogBreed }}</p>
+        <p>Fun Fact: {{ dogFact }}</p>
+      </div>
 
 
         </div>
