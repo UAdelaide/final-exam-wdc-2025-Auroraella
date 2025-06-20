@@ -100,5 +100,6 @@ let db;
   // Q6 to 8
   // API Dogs
   app.get('/api/dogs', async (req, res) => {
-    
+    try 
+  });
   module.exports = app;
