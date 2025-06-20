@@ -26,27 +26,7 @@
     </form>
     <div v-if="error" class="alert alert-danger">{{ error }}</div>
 
-    <h2 class="mt-5 mb-3">All Dogs in the Database</h2>
-    <div v-if="dogs.length > 0">
-      <table class="table table-bordered align-middle bg-white">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Size</th>
-            <th>Owner</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="dog in dogs" :key="dog.dog_name">
-            <td style="width:120px"><img :src="dog.photo" :alt="dog.dog_name" style="width:100px;height:100px;object-fit:cover;border-radius:10px;"></td>
-            <td>{{ dog.name }}</td>
-            <td>{{ dog.size }}</td>
-            <td>{{ dog.owner_username }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div v-else class="text-muted">No dogs found.</div>
+    
 
     <p class="lead">Connect with trusted walkers for your beloved dog!</p>
   </div>
