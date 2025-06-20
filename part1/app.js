@@ -62,35 +62,36 @@ let db;
     }
 
     const [walkRows] = await db.execute('SELECT COUNT(*) AS count FROM WalkRequests');
-    const max = dogs.find(d => d.name === 'Max');
-    const bella = dogs.find(d => d.name === 'Bella');
-    const milu = dogs.find(d => d.name === 'Milu');
-    const candy = dogs.find(d => d.name === 'Candy');
-    const apple = dogs.find(d => d.name === 'Apple');
-    await db.execute(`INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) VALUES
+    if (walkRows[0].count === 0) {
+      const max = dogs.find(d => d.name === 'Max');
+      const bella = dogs.find(d => d.name === 'Bella');
+      const milu = dogs.find(d => d.name === 'Milu');
+      const candy = dogs.find(d => d.name === 'Candy');
+      const apple = dogs.find(d => d.name === 'Apple');
+      await db.execute(`INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) VALUES
       (${max.dog_id}, '2025-06-10 08:00:00', 30, 'Parklands', 'open'),
       (${bella.dog_id}, '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted'),
       (${milu.dog_id}, '2025-06-11 09:45:00', 60, 'Prospect', 'open'),
       (${candy.dog_id}, '2025-06-12 11:30:00', 30, 'Harbour Town', 'completed'),
       (${apple.dog_id}, '2025-06-14 12:00:00', 40, 'Glenelg', 'open'),
-    `);
-  }
-  
-})();
-// catch 404 and forward to error handler
-app.use(function (req, res, next) {
-  next(createError(404));
-});
+      `);
+    }
 
-// error handler
-app.use(function (err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+  }) ();
+  // catch 404 and forward to error handler
+  app.use(function (req, res, next) {
+    next(createError(404));
+  });
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
-});
+  // error handler
+  app.use(function (err, req, res, next) {
+    // set locals, only providing error in development
+    res.locals.message = err.message;
+    res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-module.exports = app;
+    // render the error page
+    res.status(err.status || 500);
+    res.render('error');
+  });
+
+  module.exports = app;
