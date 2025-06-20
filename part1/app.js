@@ -38,7 +38,7 @@ let db;
       await db.execute(`INSERT INTO Users (username, email, password_hash, role) VALUES
         ('alice123', 'alice@example.com', 'hashed123', 'owner'),
         ('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
-        ('carol', 'carol@example.com', 'hashed789', 'owner'),
+        ('carol123', 'carol@example.com', 'hashed789', 'owner'),
         ('mina', 'mina@example.com', 'hashed000', 'walker'),
         ('mimi', 'mimi@example.com', 'hashed199', 'owner')
       `);
@@ -47,9 +47,9 @@ let db;
     const [dogRows] = await db.execute('SELECT COUNT(*) AS count FROM Dogs');
     if (dogRows[0].count === 0) {
       await db.execute(`INSERT INTO Dogs (owner_id, name, size) VALUES
-        ((SELECT user_id FROM Users WHERE username = 'alice'), 'Max', 'medium'),
-        ((SELECT user_id FROM Users WHERE username = 'carol'), 'Bella', 'small'),
-        ((SELECT user_id FROM Users WHERE username = 'alice'), 'Milu', 'large'),
+        ((SELECT user_id FROM Users WHERE username = 'alice123'), 'Max', 'medium'),
+        ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Bella', 'small'),
+        ((SELECT user_id FROM Users WHERE username = 'alice123'), 'Milu', 'large'),
         ((SELECT user_id FROM Users WHERE username = 'mimi'), 'Candy', 'medium'),
         ((SELECT user_id FROM Users WHERE username = 'carol'), 'Apple', 'small')
       `);
