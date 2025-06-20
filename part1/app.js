@@ -39,7 +39,7 @@ let db;
     if (userRows[0].count === 0) {
       await db.execute('INSERT INTO Users (username, email, password_hash, role) VALUES
         ('alice', 'alice@example.com', 'hased123', 'owner'),
-        ('bobwalker', )
+        ('bobwalker', 'bob@example.com', 'hased')
         ');
     }
   }
