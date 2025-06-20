@@ -73,12 +73,12 @@
                     try {
                         const res = await fetch('https://dog.ceo/api/breeds/image/random');
                         const data = await res.json();
-                    this.dogImg = data.message;
-                } catch (e) {
-                    this.dogImg = '';
+                        this.dogImg = data.message;
+                    } catch (e) {
+                        this.dogImg = '';
+                    }
                 }
-            }
-        },
+             },
         mounted() {
             this.fetchDog();
         }
