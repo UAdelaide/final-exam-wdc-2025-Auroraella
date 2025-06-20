@@ -110,11 +110,12 @@ app.get('/api/dogs', async (req, res) => {
 
   } catch (err) {
    res.status(500).json({ error: 'Failed to fetch dogs'});
-
+app.get('/api/walkrequests/open', async (req, res) => {
    }
 });
 
 // API Walk Requests
+
 
 
 module.exports = app;
