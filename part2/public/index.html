@@ -107,7 +107,7 @@
 
             const images = await Promise.all(imagePromises);
 
-            dogs.value = dogsData.map((dog, index) => ({
+            this.dogs = dogsData.map((dog, index) => ({
               ...dog,
               photo: images[index].message
             }));
