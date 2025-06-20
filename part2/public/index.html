@@ -104,8 +104,11 @@
               photo: images[index].message
             }));
 
+          } catch (err) {
+            console.error("Could not fetch dogs:", err);
           }
-        }
+        },
+        
       }
     }).mount('#app');
   </script>
