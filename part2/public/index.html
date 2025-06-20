@@ -51,8 +51,8 @@
             const data = await res.json();
             if (!res.ok) throw new Error(data.error || 'Login failed');
             if (data.user.role === 'owner') {
-              
-             }
+               window.location.href = 'owner-dashboard.html';
+            } else if (data.user.role === 'walker') {
           }
         }
       }
