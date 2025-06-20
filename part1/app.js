@@ -46,7 +46,8 @@ let db;
       `);
     }
 
-    const [dogRows] = await db
+    const [dogRows] = await db.execute('SELECT COUNT(*) AS count FROM Dogs');
+    if (dogRows[0])
   }
 })();
 // catch 404 and forward to error handler
