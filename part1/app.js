@@ -37,7 +37,7 @@ let db;
     // Q%; SQL insert into
     const [userRows] = await db.execute('SELECT COUNT(*) AS count FROM Users');
     if (userRows[0].count === 0 {
-
+      await db.execute('')
     }
   }
 })();
