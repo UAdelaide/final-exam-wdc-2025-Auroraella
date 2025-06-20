@@ -96,6 +96,10 @@
             const imagePromises = dogsData.map(dog =>
               fetch('https://dog.ceo/api/breeds/image/random').then(res => res.json())
             );
+
+            const images = await Promise.all(imagePromises);
+            
+
           }
         }
       }
