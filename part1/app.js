@@ -126,7 +126,7 @@ app.get('/api/walkrequests/open', async (req, res) => {
     `);
     res.json(rows);
   } catch (err) {
-    r
+    res.status(500).json({ error: })
   }
 });
 
