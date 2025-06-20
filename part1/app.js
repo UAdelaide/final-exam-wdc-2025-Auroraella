@@ -36,7 +36,7 @@ let db;
 
     // Q%; SQL insert into
     const [userRows] = await db.execute('SELECT COUNT(*) AS count FROM Users');
-    if 
+    if (userRows[0].count ===
   }
 })();
 // catch 404 and forward to error handler
