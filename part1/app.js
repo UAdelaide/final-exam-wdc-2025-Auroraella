@@ -41,7 +41,8 @@ let db;
         ('alice', 'alice@example.com', 'hased123', 'owner'),
         ('bobwalker', 'bob@example.com', 'hased456', 'walker'),
         ('carol', 'carol@example.com', 'hased789', 'owner'),
-        ('mina', 'mina@example.com', 'hashed000', )
+        ('mina', 'mina@example.com', 'hashed000', 'walker'),
+        ()
         ');
     }
   }
