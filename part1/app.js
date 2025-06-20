@@ -101,7 +101,7 @@ app.use(function (err, req, res, next) {
 // API Dogs
 app.get('/api/dogs', async (req, res) => {
   try {
-    const [rows]= await db.execute(`
+    const [rows] = await db.execute(`
         SELECT d.name AS dog_name, d.size, u.username AS owner_username
         FROM Dogs d
         JOIN Users u ON d.owner_id = u.user_id
@@ -109,9 +109,9 @@ app.get('/api/dogs', async (req, res) => {
     res.json(rows);
 
   } catch (err) {
-   res.status(500).json({ error: 'Failed to fetch dogs'});
+    res.status(500).json({ error: 'Failed to fetch dogs' });
 
-   }
+  }
 });
 
 // API Walk Requests
@@ -126,7 +126,7 @@ app.get('/api/walkrequests/open', async (req, res) => {
     `);
     res.json(rows);
   } catch (err) {
-    res.status(500).json({ error: 'Failed to fetch open walk requests'});
+    res.status(500).json({ error: 'Failed to fetch open walk requests' });
   }
 });
 
@@ -146,9 +146,8 @@ app.get('/api/walkers/summary', async (req, res) => {
     `);
     res.json(rows);
   } catch (err) {
-    res.status(500).json({ error: 'Failed to fetch walker summary'})
+    res.status(500).json({ error: 'Failed to fetch walker summary' });
   }
-
 });
 
 
