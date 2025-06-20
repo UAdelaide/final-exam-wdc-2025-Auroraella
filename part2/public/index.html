@@ -44,7 +44,14 @@
             <td>{{ dog.name }}</td>
             <td>{{ dog.size }}</td>
             <td>{{ dog.owner_id }}</td>
-            <td><img :src="dog.photo" alt="A cute dog" class="img-thumbnail" style="width: 100px; height: 100px; object-fit: cover;"></td>
+            <td>
+              <img
+          src="https://placehold.co/100x100?text=Dog"
+    :src="dog.photo || 'https://placehold.co/100x100?text=Dog'"
+    alt="A cute dog"
+    class="img-thumbnail"
+    style="width: 100px; height: 100px; object-fit: cover;">
+</td>
           </tr>
          </tbody>
       </table>
