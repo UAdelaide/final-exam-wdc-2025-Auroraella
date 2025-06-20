@@ -51,7 +51,8 @@ let db;
       const [owners] = await db.execute("SELECT user_id, username FROM Users WHERE role='owner'");
       const alice = owners.find(u => u.username === 'alice123');
       const carol = owners.find(u => u.username === 'carol123');
-      const mimi = owners.find(u => )
+      const mimi = owners.find(u => u.username === 'mimi');
+      
     }
   }
 })();
