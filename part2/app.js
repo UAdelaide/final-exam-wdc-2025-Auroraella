@@ -8,10 +8,12 @@ const app = express();
 
 function requireAuth(req, res, next) {
     if (!req.session.user) {
-            return res.redirect('/index');
+        if (req.path.endsWith('.html') || req.path === '/') {
+            return res.redirect('/index.html');
         }
         return res.status(401).json({ error: 'Unauthorized' });
     }
+    return next();
 }
 function requireOwner(req, res, next) {
     if (!req.session.user) {
