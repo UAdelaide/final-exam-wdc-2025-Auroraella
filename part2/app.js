@@ -20,8 +20,10 @@ function requireAuth(req, res, next) {
             return res.redirect('/login.html');
         }
         return res.status(401).json({ error: 'Unauthorized' });
+    }
+    next();
 }
-
+function
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');
