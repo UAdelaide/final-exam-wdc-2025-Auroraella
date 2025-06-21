@@ -49,7 +49,7 @@ app.get('/walker-dashboard', requireWalker, (req, res) => {
 });
 app.get('/index.html', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
-}
+});
 
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
@@ -70,7 +70,7 @@ app.get('/', (req, res) => {
             return res.redirect('/walker-dashboard');
         }
     }
-    return res.redirect('/');
+    return res.redirect('/index');
 });
 
 // Export the app instead of listening here
