@@ -41,16 +41,6 @@ app.use(session({
     saveUninitialized: false,
     cookie: { secure: false }
 }));
-app.use(express.static(path.join(__dirname, '/public'), {
-    setHeaders: (res, paths) => {
-        if (paths.endsWith('index.html')
-            || paths.includes('/images/')
-            || paths.includes('/stylesheets/')
-            || paths.includes('/javascripts/')) {
-            return;
-        }
-    }
-}));
 app.get('/owner-dashboard.html', requireOwner, (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'owner-dashboard.html'));
 });
