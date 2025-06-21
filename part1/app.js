@@ -131,6 +131,13 @@ app.get('/api/walkers/summary', async (req, res) => {
         COALESCE(COUNT(DISTINCT completed.request_id), 0)     AS completed_walks
       FROM Users u
       LEFT JOIN WalkApplications wa
+             ON wa.walker_id = u.user_id
+            AND wa.status   = 'accepted'
+      LEFT JOIN WalkRequests completed
+             ON completed.request_id = wa.request_id
+            AND completed.status     = 'completed'
+      LEFT JOIN WalkRatings wr_ratings
+             ON wr_ratings.request_id = completed.request_id
 
         `);
     res.json(rows);
