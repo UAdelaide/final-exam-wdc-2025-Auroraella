@@ -121,24 +121,24 @@ app.get('/api/walkers/summary', async (req, res) => {
   try {
     const [rows] = await db.execute(`
       SELECT
-        u.username                                            AS walker_username,
-        COUNT(wr_ratings.rating)                              AS total_ratings,
+        u.username AS walker_username,
+        COUNT(wr_ratings.rating) AS total_ratings,
         CASE
           WHEN COUNT(wr_ratings.rating) > 0
           THEN ROUND(AVG(wr_ratings.rating), 1)
           ELSE NULL
-        END                                                   AS average_rating,
-        COALESCE(COUNT(DISTINCT completed.request_id), 0)     AS completed_walks
+        END AS average_rating,
+        COALESCE(COUNT(DISTINCT completed.request_id), 0) AS completed_walks
       FROM Users u
       LEFT JOIN WalkApplications wa
              ON wa.walker_id = u.user_id
             AND wa.status   = 'accepted'
       LEFT JOIN WalkRequests completed
              ON completed.request_id = wa.request_id
-            AND completed.status     = 'completed'
+            AND completed.status = 'completed'
       LEFT JOIN WalkRatings wr_ratings
              ON wr_ratings.request_id = completed.request_id
-            AND wr_ratings.walker_id  = u.user_id
+            AND wr_ratings.walker_id = u.user_id
       WHERE u.role = 'walker'
       GROUP BY u.user_id
       ORDER BY u.username;
