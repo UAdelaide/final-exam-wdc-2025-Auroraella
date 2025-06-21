@@ -23,7 +23,7 @@ function requireAuth(req, res, next) {
     }
     next();
 }
-function
+function requireOwner
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');
