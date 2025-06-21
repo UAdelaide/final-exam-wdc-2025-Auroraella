@@ -83,5 +83,4 @@ app.get('/', (req, res) => {
 );
 
 // Export the app instead of listening here
-module.exports = {
-};
+module.exports = app;
