@@ -5,19 +5,9 @@ require('dotenv').config();
 
 const app = express();
 
-
-function requireAuth(req, res, next) {
-    if (!req.session.user) {
-        if ( req.path === '/') {
-            return res.redirect('/index');
-        }
-        return res.status(401).json({ error: 'Unauthorized' });
-    }
-    return next();
-}
 function requireOwner(req, res, next) {
     if (!req.session.user) {
-        return res.redirect('/index.html');
+        return res.redirect('/index');
     }
     if (req.session.user.role !== 'owner') {
         return res.status(403).json({ error: 'Forbidden' });
@@ -26,7 +16,7 @@ function requireOwner(req, res, next) {
 }
 function requireWalker(req, res, next) {
     if (!req.session.user) {
-        return res.redirect('/index.html');
+        return res.redirect('/index');
     }
     if (req.session.user.role !== 'walker') {
         return res.status(403).json({ error: 'Forbidden' });
