@@ -37,7 +37,7 @@ app.get('/owner-dashboard', requireOwner, (req, res) => {
 app.get('/walker-dashboard', requireWalker, (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'walker-dashboard.html'));
 });
-app.get('/', (req, res) => {
+app.get('/index', (req, res) => {
     if (req.session.user) {
         if (req.session.user.role === 'owner') {
             return res.redirect('/owner-dashboard');
@@ -48,6 +48,8 @@ app.get('/', (req, res) => {
     }
     return res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
+app.get('/', (req, res) => {
+    
 
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
