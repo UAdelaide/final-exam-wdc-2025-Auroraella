@@ -14,6 +14,9 @@ app.use(session({
     saveUninitialized: false,
     cookie: { secure: false }
 }));
+function requireAuth(req, res, next) {
+    
+}
 
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
