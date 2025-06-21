@@ -47,7 +47,7 @@ app.get('/owner-dashboard', requireOwner, (req, res) => {
 app.get('/walker-dashboard', requireWalker, (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'walker-dashboard.html'));
 });
-app.get('/index.html', (req, res) => {
+app.get('/index', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
