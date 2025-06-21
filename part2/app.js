@@ -48,9 +48,7 @@ app.get('/index', (req, res) => {
     }
     return res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
-app.get('/', (req, res) => {
-    return res.redirect('/index');
-});
+app.get('/', (req, res) => res.redirect('/index'));
 
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
