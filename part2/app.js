@@ -52,6 +52,13 @@ app.use(express.static(path.join(__dirname, '/public'), {
         }
     }
 }));
+app.get('/owner-dashboard.html', requireOwner, (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'owner-dashboard.html'));
+});
+app.get('/walker-dashboard.html', requireWalker, (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'walker-dashboard.html'));
+});
+
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');
