@@ -44,14 +44,15 @@ app.use(session({
 }));
 app.use(express.static(path.join(__dirname, '/public'), {
     setHeaders: (res, path) => {
-        if (path.endsWith('index.html') ||
-            path.includes('/images/') ||
+        if (path.endsWith('index.html')
+            || path.includes('/images/')
+        ||
             path.includes('/stylesheets/') ||
             path.includes('/javascripts/')) {
             return;
         }
     }
-    
+}));
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');
