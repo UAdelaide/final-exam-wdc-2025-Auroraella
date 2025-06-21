@@ -5,15 +5,7 @@ require('dotenv').config();
 
 const app = express();
 
-// Middleware
-app.use(express.json());
-app.use(express.static(path.join(__dirname, '/public')));
-app.use(session({
-    secret: process.env.SESSION_SECRET || 'dogwalksecret',
-    resave: false,
-    saveUninitialized: false,
-    cookie: { secure: false }
-}));
+
 function requireAuth(req, res, next) {
     if (!req.session.user) {
         if (req.path.endsWith('.html') || req.path === '/') {
@@ -41,6 +33,15 @@ function requireWalker(req, res, next) {
     }
     return next();
 }
+// Middleware
+app.use(express.json());
+app.use(express.static(path.join(__dirname, '/public')));
+app.use(session({
+    secret: process.env.SESSION_SECRET || 'dogwalksecret',
+    resave: false,
+    saveUninitialized: false,
+    cookie: { secure: false }
+}));
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');
