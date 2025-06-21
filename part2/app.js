@@ -21,7 +21,7 @@ function requireAuth(req, res, next) {
         }
         return res.status(401).json({ error: 'Unauthorized' });
     }
-    next();
+    return next();
 }
 function requireOwner(req, res, next) {
     if (!req.session.user) {
@@ -30,7 +30,7 @@ function requireOwner(req, res, next) {
     if (req.session.user.role !== 'owner') {
         return res.status(403).json({ error: 'Forbidden' });
     }
-    next();
+    return next();
 }
 function requireWalker(req, res, next) {
     if (!req.session.user) {
@@ -51,4 +51,9 @@ app.use('/api/users', userRoutes);
 app.use('/api/dogs', dogRoutes);
 
 // Export the app instead of listening here
-module.exports = app;
+module.exports = {
+    app: app,
+    requireAuth: requireAuth,
+    requireOwner: requireOwner,
+    requireWalker: requireWalker
+};
