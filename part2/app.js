@@ -37,8 +37,16 @@ app.get('/owner-dashboard', requireOwner, (req, res) => {
 app.get('/walker-dashboard', requireWalker, (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'walker-dashboard.html'));
 });
-app.get('/index', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+app.get('/', (req, res) => {
+    if (req.session.user) {
+        if (req.session.user.role === 'owner') {
+            return res.redirect('/owner-dashboard');
+        }
+        if (req.session.user.role === 'walker') {
+            return res.redirect('/walker-dashboard');
+        }
+    }
+    return res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 // Routes
@@ -49,19 +57,6 @@ const dogRoutes = require('./routes/dogRoutes'); // Q17
 app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/dogs', dogRoutes);
-
-
-app.get('/', (req, res) => {
-    if (req.session.user) {
-        if (req.session.user.role === 'owner') {
-            return res.redirect('/owner-dashboard');
-        }
-        if (req.session.user.role === 'walker') {
-            return res.redirect('/walker-dashboard');
-        }
-    }
-    return res.redirect('/index');
-});
 
 // Export the app instead of listening here
 module.exports = app;
