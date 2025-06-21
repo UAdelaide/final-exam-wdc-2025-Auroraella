@@ -67,7 +67,7 @@ app.get('/', (req, res) => {
             return res.redirect('/walker-dashboard');
         }
     }
-    return res.redirect('/index');
+    return res.redirect('/');
 });
 
 // Export the app instead of listening here
