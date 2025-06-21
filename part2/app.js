@@ -46,9 +46,8 @@ app.use(express.static(path.join(__dirname, '/public'), {
     setHeaders: (res, path) => {
         if (path.endsWith('index.html')
             || path.includes('/images/')
-        ||
-            path.includes('/stylesheets/') ||
-            path.includes('/javascripts/')) {
+            || path.includes('/stylesheets/')
+            || path.includes('/javascripts/')) {
             return;
         }
     }
