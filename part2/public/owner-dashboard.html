@@ -137,7 +137,7 @@
         // Q14: Modify changes for owner dashboard
         const logout = async () => {
           await fetch('/api/users/logout', { method: 'POST' });
-          window.location.href = 'index.html';
+          window.location.href = 'index';
         }
 
         onMounted(() => {
