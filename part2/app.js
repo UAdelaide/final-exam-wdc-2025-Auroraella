@@ -79,8 +79,7 @@ app.get('/', (req, res) => {
         }
     }
     return res.redirect('/index.html');
-}
-);
+});
 
 // Export the app instead of listening here
 module.exports = app;
