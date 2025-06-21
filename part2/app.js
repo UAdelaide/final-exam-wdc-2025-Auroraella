@@ -39,7 +39,7 @@ function requireWalker(req, res, next) {
     if (req.session.user.role !== 'walker') {
         return res.status(403).json({ error: 'Forbidden' });
     }
-    next();
+    return next();
 }
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
