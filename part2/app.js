@@ -41,10 +41,10 @@ app.use(session({
     saveUninitialized: false,
     cookie: { secure: false }
 }));
-app.get('/owner-dashboard.html', requireOwner, (req, res) => {
+app.get('/owner-dashboard', requireOwner, (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'owner-dashboard.html'));
 });
-app.get('/walker-dashboard.html', requireWalker, (req, res) => {
+app.get('/walker-dashboard', requireWalker, (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'walker-dashboard.html'));
 });
 
@@ -61,13 +61,13 @@ app.use('/api/dogs', dogRoutes);
 app.get('/', (req, res) => {
     if (req.session.user) {
         if (req.session.user.role === 'owner') {
-            return res.redirect('/owner-dashboard.html');
+            return res.redirect('/owner-dashboard');
         }
         if (req.session.user.role === 'walker') {
-            return res.redirect('/walker-dashboard.html');
+            return res.redirect('/walker-dashboard');
         }
     }
-    return res.redirect('/index.html');
+    return res.redirect('/index');
 });
 
 // Export the app instead of listening here
