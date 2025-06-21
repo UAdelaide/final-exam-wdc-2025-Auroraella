@@ -49,7 +49,7 @@
 
                 :src="dog.photo || 'https://placehold.co/100x100?text=Dog'"
                 alt="A cute dog"
-              
+
                 src="https://placehold.co/100x100?text=Dog"
                 style="height: 100px; object-fit: cover;">
             </td>
@@ -84,7 +84,7 @@
             const data = await res.json();
             if (!res.ok) throw new Error(data.error || 'Login failed');
             if (data.user.role === 'owner') {
-               window.location.href = 'owner-dashboard.html';
+               window.location.href = 'owner-dashboard';
             } else if (data.user.role === 'walker') {
               window.location.href = 'walker-dashboard.html';
             } else {
