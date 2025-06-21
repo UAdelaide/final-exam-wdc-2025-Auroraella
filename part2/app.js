@@ -48,8 +48,7 @@ app.use(express.static(path.join(__dirname, '/public'), {
             || paths.includes('/images/')
             || paths.includes('/stylesheets/')
             || paths.includes('/javascripts/')) {
-            return;
-        }
+            res.setHeader('Cache-Control', 'public, max-age=3600'); // Cache for 1 hour}
     }
 }));
 // Routes
