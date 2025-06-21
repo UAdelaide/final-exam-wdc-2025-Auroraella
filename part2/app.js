@@ -42,6 +42,10 @@ app.use(session({
     saveUninitialized: false,
     cookie: { secure: false }
 }));
+app.use(express.static(path.join(__dirname, '/public'), {
+    setHeaders: (res, path) => {
+        if (path.endsWith('index.html') ||
+            path.includes('/images/') ||
 
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
