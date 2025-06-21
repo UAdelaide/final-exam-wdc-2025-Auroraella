@@ -23,7 +23,10 @@ function requireAuth(req, res, next) {
     }
     next();
 }
-function requireOwner
+function requireOwner(req, res, next) {
+    if (!req.session.user) {
+        return res.redirect('/index.html');
+    }
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');
