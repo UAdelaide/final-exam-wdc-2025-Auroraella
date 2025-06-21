@@ -52,6 +52,7 @@
                 :src="dogImg"
                 alt="Dog of the day"
                 v-if="dogImg" />
+        </div>
         <div v-if="showDetails">
             <div v-if="showDetails">
                 <h2>{{ dogName }}</h2>
@@ -90,6 +91,5 @@
         }).mount('#app');
     </script>
 
-    </div>
 </body>
 </html>
