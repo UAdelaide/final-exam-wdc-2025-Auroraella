@@ -9,7 +9,7 @@ const app = express();
 function requireAuth(req, res, next) {
     if (!req.session.user) {
         if (req.path.endsWith('.html') || req.path === '/') {
-            return res.redirect('/login.html');
+            return res.redirect('/index.html');
         }
         return res.status(401).json({ error: 'Unauthorized' });
     }
