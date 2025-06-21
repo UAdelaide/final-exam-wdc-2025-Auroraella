@@ -47,6 +47,9 @@ app.get('/owner-dashboard', requireOwner, (req, res) => {
 app.get('/walker-dashboard', requireWalker, (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'walker-dashboard.html'));
 });
+app.get('/index.html', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+}
 
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
