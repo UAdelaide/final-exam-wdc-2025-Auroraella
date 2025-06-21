@@ -43,11 +43,11 @@ app.use(session({
     cookie: { secure: false }
 }));
 app.use(express.static(path.join(__dirname, '/public'), {
-    setHeaders: (res, path) => {
-        if (path.endsWith('index.html')
-            || path.includes('/images/')
-            || path.includes('/stylesheets/')
-            || path.includes('/javascripts/')) {
+    setHeaders: (res, paths) => {
+        if (paths.endsWith('index.html')
+            || paths.includes('/images/')
+            || paths.includes('/stylesheets/')
+            || paths.includes('/javascripts/')) {
             return;
         }
     }
