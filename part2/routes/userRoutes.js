@@ -56,6 +56,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
+
 // Q15: GET dogs for specific owner
 router.get('/:ownerId/dogs', async (req, res) => {
   const ownerId = req.params.ownerId;
