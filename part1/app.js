@@ -128,8 +128,11 @@ app.get('/api/walkers/summary', async (req, res) => {
           THEN ROUND(AVG(wr_ratings.rating), 1)
           ELSE NULL
         END                                                   AS average_rating,
-      GROUP BY u.user_id
-    `);
+        COALESCE(COUNT(DISTINCT completed.request_id), 0)     AS completed_walks
+      FROM Users u
+      LEFT JOIN WalkApplications wa
+
+        `);
     res.json(rows);
   } catch (err) {
     res.status(500).json({ error: 'Failed to fetch walker summary' });
