@@ -69,6 +69,8 @@ app.use('/api/users', userRoutes);
 app.use('/api/dogs', dogRoutes);
 
 
+app.get('/', (req, res) => {
+    if (req.session.user) {
 
 
 // Export the app instead of listening here
